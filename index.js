@@ -42,6 +42,9 @@ const createFolder = async () => {
 
 const writeFileWithPromise = util.promisify(fs.writeFile);
 
+/**
+ * Downloads a single collection to disc
+ */
 const downloadCollectionToFile = async ({ db, folder, collectionName }) => {
   console.log('Backing up', collectionName);
 
