@@ -1,0 +1,27 @@
+{
+  "name": "mongo-backup-boilerplate",
+  "version": "1.0.0",
+  "description": "Easy to use mongo git backups",
+  "main": "index.js",
+  "repository": "https://github.com/jtaylorchang/mongo-backup-boilerplate.git",
+  "author": "Jeff Taylor-Chang <jeff@jefftc.com>",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "esm": "^3.2.25",
+    "mkdirp": "^1.0.4",
+    "moment": "^2.27.0",
+    "mongodb": "^3.6.1"
+  },
+  "scripts": {
+    "backup": "node -r esm index.js"
+  },
+  "prettier": {
+    "trailingComma": "none",
+    "singleQuote": true,
+    "printWidth": 120
+  },
+  "devDependencies": {
+    "prettier": "^2.1.1"
+  }
+}
