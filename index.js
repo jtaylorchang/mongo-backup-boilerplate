@@ -81,12 +81,14 @@ const execWithPromise = util.promisify(exec);
  */
 const commitAndPush = async ({ folder }) => {
   await execWithPromise(`git add ${folder} && git commit -m "Backed up ${folder}" && git push`);
+
+  console.log('Pushed to repo');
 };
 
 /**
  * Run the backup
  */
-const run = async () => {
+(async () => {
   const folder = await createFolder();
 
   const { client, db } = await connectToMongo();
@@ -96,7 +98,4 @@ const run = async () => {
   await commitAndPush({ folder });
 
   console.log('Backup finished successfully');
-};
-
-// Run
-run();
+})();
