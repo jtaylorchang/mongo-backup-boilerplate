@@ -80,7 +80,12 @@ const execWithPromise = util.promisify(exec);
  * Commits the changes and pushes
  */
 const commitAndPush = async ({ folder }) => {
-  await execWithPromise(`git add ${folder} && git commit -m "Backed up ${folder}" && git push`);
+  const { stdout, stderr } = await execWithPromise(
+    `git add ${folder} && git commit -m "Backed up ${folder}" && git push`
+  );
+
+  if (stdout) console.log(stdout);
+  if (stderr) console.error(stderr);
 
   console.log('Pushed to repo');
 };
