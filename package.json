@@ -14,7 +14,7 @@
     "mongodb": "^3.6.1"
   },
   "scripts": {
-    "backup": "node -r esm index.js"
+    "backup": "node -r esm backup.js"
   },
   "prettier": {
     "trailingComma": "none",

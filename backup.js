@@ -34,10 +34,11 @@ const disconnectMongo = async ({ client }) => {
  */
 const createFolder = async () => {
   const date = moment().format('YYYY-MM-DD-HHmm');
+  const folder = `backups/${date}`;
 
-  await mkdirp(date);
+  await mkdirp(folder);
 
-  return date;
+  return folder;
 };
 
 const writeFileWithPromise = util.promisify(fs.writeFile);
