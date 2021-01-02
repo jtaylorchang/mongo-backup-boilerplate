@@ -4,6 +4,7 @@ import mkdirp from 'mkdirp';
 import fs from 'fs';
 import util from 'util';
 import { exec } from 'child_process';
+import chalk from 'chalk';
 
 import Secrets from './secrets.json';
 
@@ -47,11 +48,11 @@ const writeFileWithPromise = util.promisify(fs.writeFile);
  * Downloads a single collection to disc
  */
 const downloadCollectionToFile = async ({ db, folder, collectionName }) => {
-  console.log('Backing up', collectionName);
+  console.log('Backing up', chalk.yellow(collectionName));
 
   const collection = db.collection(collectionName);
   const data = await collection.find({}).toArray();
-  console.log(`=> Downloaded [${data.length}] documents`);
+  console.log(`=> Downloaded [${chalk.green(data.length)}] documents`);
 
   const content = JSON.stringify(data);
 
@@ -88,7 +89,7 @@ const commitAndPush = async ({ folder }) => {
   if (stdout) console.log(stdout);
   if (stderr) console.error(stderr);
 
-  console.log('Pushed to repo');
+  console.log(chalk.green('Pushed to repo'));
 };
 
 /**
@@ -103,5 +104,5 @@ const commitAndPush = async ({ folder }) => {
 
   await commitAndPush({ folder });
 
-  console.log('Backup finished successfully');
+  console.log(chalk.green('Backup finished successfully'));
 })();
