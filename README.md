@@ -1,6 +1,6 @@
 # mongo-backup-boilerplate
 
-[![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/jtaylorchang/mongo-backup-boilerplate.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/jtaylorchang/mongo-backup-boilerplate/context:javascript)
+![GitHub](https://img.shields.io/github/license/jtaylorchang/mongo-backup-boilerplate) [![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/jtaylorchang/mongo-backup-boilerplate.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/jtaylorchang/mongo-backup-boilerplate/context:javascript)
 
 This is a boilerplate designed to be ready to use. Simply create a new repo using this as the template and update the secrets file. It is designed to backup the data to itself by running the backup command.
 
